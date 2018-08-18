@@ -61,7 +61,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\WorkAreaController.cs" />
+    <Compile Include="Assets\Scripts\Bubble.cs" />
+    <Compile Include="Assets\Scripts\WorkAreaController.cs" />
     <Reference Include="UnityEditor.StandardEvents">
       <HintPath>/Users/lolzoloz9/Unity Projects/GameJamAugust/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll</HintPath>
     </Reference>
