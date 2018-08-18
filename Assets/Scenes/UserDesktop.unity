@@ -677,6 +677,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   DataCollectedCount: 0
+  DataCollectedText: {fileID: 1038680565}
 --- !u!1 &1038680563
 GameObject:
   m_ObjectHideFlags: 0
