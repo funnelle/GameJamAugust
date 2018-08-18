@@ -9,16 +9,21 @@ public class Avatar : MonoBehaviour {
     bool expanded;
     public Button avatarButton; 
     public Canvas bubble;
+    public Text bubbleText;
 
 	// Use this for initialization
 	void Start () {
-        
         avatarButton.onClick.AddListener(OnClick);
         expanded = true;
     }
 	
 	// Update is called once per frame
 	void Update () {
+    }
+
+    void setText(string text)
+    {
+        bubbleText.text = text;
     }
 
     void OnClick()
