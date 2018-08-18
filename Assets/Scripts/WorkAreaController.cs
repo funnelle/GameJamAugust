@@ -8,10 +8,6 @@ public class WorkAreaController : MonoBehaviour {
     public Button DeployAdButton;
     public Button SellDataButton;
 
-    public Image DataMineTimer;
-    public Image DeployAdTimer;
-    public Image MonetizeTimer;
-
     public int DataSetsCount;
     public int NewFollowersCount;
     public int RevenueCount;
@@ -58,9 +54,6 @@ public class WorkAreaController : MonoBehaviour {
             UsersCount++;
             SetCountText();
             StartCoroutine(DisableButton(DataMineButton, 8f));
-            time = 8f;
-            time -= Time.deltaTime;
-            DataMineTimer.fillAmount = time / 8f;
         }
     }
 
