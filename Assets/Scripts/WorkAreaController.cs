@@ -4,6 +4,10 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class WorkAreaController : MonoBehaviour {
+    public Button DataMineButton;
+    public Button DeployAdButton;
+    public Button SellDataButton;
+
     public int DataSetsCount;
     public int NewFollowersCount;
     public int RevenueCount;
@@ -47,6 +51,7 @@ public class WorkAreaController : MonoBehaviour {
             NewFollowersCount--;
             UsersCount++;
             SetCountText();
+            StartCoroutine(DisableButton(DataMineButton, 5f));
         }
     }
 
@@ -55,6 +60,7 @@ public class WorkAreaController : MonoBehaviour {
             RevenueCount = RevenueCount - 500;
             NewFollowersCount++;
             SetCountText();
+            StartCoroutine(DisableButton(DeployAdButton, 5f));
         }
     }
 
@@ -63,6 +69,14 @@ public class WorkAreaController : MonoBehaviour {
             DataSetsCount--;
             RevenueCount = RevenueCount + 500;
             SetCountText();
+            StartCoroutine(DisableButton(SellDataButton, 5f));
         }
     }
+
+    private IEnumerator DisableButton(Button buttonName, float disableButtonTime) {
+        buttonName.interactable = false;
+        yield return new WaitForSeconds(disableButtonTime);
+        buttonName.interactable = true;
+    }
+
 }
