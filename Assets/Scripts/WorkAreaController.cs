@@ -8,6 +8,10 @@ public class WorkAreaController : MonoBehaviour {
     public Button DeployAdButton;
     public Button SellDataButton;
 
+    public Image DataMineTimer;
+    public Image DeployAdTimer;
+    public Image MonetizeTimer;
+
     public int DataSetsCount;
     public int NewFollowersCount;
     public int RevenueCount;
@@ -23,6 +27,8 @@ public class WorkAreaController : MonoBehaviour {
     public Text PentaPointsText;
     public Text ContractorsText;
     public Text BotText;
+
+    private float time;
 
     private void Start() {
         DataSetsCount = 0;
@@ -51,7 +57,10 @@ public class WorkAreaController : MonoBehaviour {
             NewFollowersCount--;
             UsersCount++;
             SetCountText();
-            StartCoroutine(DisableButton(DataMineButton, 5f));
+            StartCoroutine(DisableButton(DataMineButton, 8f));
+            time = 8f;
+            time -= Time.deltaTime;
+            DataMineTimer.fillAmount = time / 8f;
         }
     }
 
@@ -69,7 +78,7 @@ public class WorkAreaController : MonoBehaviour {
             DataSetsCount--;
             RevenueCount = RevenueCount + 500;
             SetCountText();
-            StartCoroutine(DisableButton(SellDataButton, 5f));
+            StartCoroutine(DisableButton(SellDataButton, 12f));
         }
     }
 
