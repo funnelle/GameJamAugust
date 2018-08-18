@@ -37,8 +37,8 @@ public class WorkAreaController : MonoBehaviour {
         RevenueText.text = "Revenue: $" + RevenueCount.ToString();
         UsersText.text = "Users: " + UsersCount.ToString();
         PentaPointsText.text = "Penta-Points: " + PentaPointsCount.ToString();
-        ContractorsText.text = "Contractors: " + ContractorsCount.ToString();
-        BotText.text = "Bots: " + BotCount.ToString();
+        //ContractorsText.text = "Contractors: " + ContractorsCount.ToString();
+        //BotText.text = "Bots: " + BotCount.ToString();
     }
 
     public void DataMine() {
