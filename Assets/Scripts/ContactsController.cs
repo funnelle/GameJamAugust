@@ -99,6 +99,11 @@ public class ContactsController : MonoBehaviour {
 
     private void handleSage(Avatar contact)
     {
+
+        if (Time.time > 120F)
+        {
+            contact.notify("Enterprise unity is very important to us here at PentaCo. Please remember to share your BONDr account with your office team mates.", 1);
+        }
     }
 
     private void handleAriana(Avatar contact)
@@ -164,5 +169,19 @@ public class ContactsController : MonoBehaviour {
         {
             contact.notify("Growth Hacker isn’t the most glamorous position, but you start bringing in revenue and I’ll see what I can do.", 1);
         }
+        if (values.RevenueCount > 500)
+        {
+            contact.notify("What do you think about using more memes in our ads? The kids like those, right? And we can get our name out faster with less work.", 2);
+            contact.respond("Sounds Good!", "Let's not", new int[] {0,0,20,25,0}, new int[] { 0, 0, 0, -5, 0 }, 3);
+        }
+        
     }
 }
+
+/*
+int data = values.DataSetsCount;
+int revenue = values.RevenueCount;
+int users = values.UsersCount;
+int penta = values.PentaPointsCount;
+int workers = values.WorkersCount;
+*/
