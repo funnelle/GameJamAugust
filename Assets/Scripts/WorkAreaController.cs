@@ -44,8 +44,8 @@ public class WorkAreaController : MonoBehaviour {
         WorkersCount = 0;
         MonetizationLoops = 0;
 
-        //AcquisitionsButton.interactable = false;
-        //ResearchButton.interactable = false;
+        AcquisitionsButton.interactable = false;
+        ResearchButton.interactable = false;
 
         SetCountText();
     }
@@ -59,7 +59,6 @@ public class WorkAreaController : MonoBehaviour {
     }
 
     public void Update() {
-        /*
         if(MonetizationLoops>=3) {
             AcquisitionsButton.interactable = true;
         }
@@ -67,8 +66,6 @@ public class WorkAreaController : MonoBehaviour {
         if(WorkersEarned>=100) {
             ResearchButton.interactable = true;
         }
-        */
-
     }
 
 
@@ -134,10 +131,6 @@ public class WorkAreaController : MonoBehaviour {
     public void Blockchain() {
         Debug.Log("Using blockchain");
         RevenueCount += Random.Range(-12000, 12000);
-        /*
-        HappyFunTimes.enabled = true;
-        HappyFunTimes.rectTransform.SetAsLastSibling();
-        StartCoroutine(HappyFunHelper());*/
         SetCountText();
         StartCoroutine(DisableButton(BlockchainButton, 30f));
     }
