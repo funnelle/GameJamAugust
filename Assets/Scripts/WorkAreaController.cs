@@ -49,11 +49,11 @@ public class WorkAreaController : MonoBehaviour {
     }
 
     void SetCountText() {
-        DataSetsText.text = "Data Sets: " + DataSetsCount.ToString();
-        RevenueText.text = "Revenue: $" + RevenueCount.ToString();
-        UsersText.text = "Users: " + UsersCount.ToString();
-        PentaPointsText.text = "Penta-Points: " + PentaPointsCount.ToString();
-        WorkersText.text = "Workers: " + WorkersCount.ToString();
+        DataSetsText.text = DataSetsCount.ToString();
+        RevenueText.text = "$" + RevenueCount.ToString();
+        UsersText.text = UsersCount.ToString();
+        PentaPointsText.text = PentaPointsCount.ToString();
+        WorkersText.text = WorkersCount.ToString();
     }
 
     public void Update() {
