@@ -10,8 +10,8 @@ public class ContactsController : MonoBehaviour {
     List<Avatar> scripts = new List<Avatar>();
 
     void Start () {
-        int top = 140;
-        int right = 205;
+        int top = -45;
+        int right = 0;
         this.newAvatar(new Vector3(right, top + 0F, 0), "Cliff Pittman");
         this.newAvatar(new Vector3(right, top + -50F, 0), "Diana Brown");
         this.newAvatar(new Vector3(right, top + -100F, 0), "Benton Solomon (CEO/Thought Leader)");
@@ -32,7 +32,9 @@ public class ContactsController : MonoBehaviour {
         GameObject newAvatar = Instantiate(avatarPrefab);
         newAvatar.name = name;
         newAvatar.transform.SetParent(this.transform);
+        Debug.Log(this.transform.position);
         RectTransform bossTranform = newAvatar.GetComponent<RectTransform>();
+        bossTranform.position = new Vector3(this.transform.position.x, this.transform.position.y, 0);
         bossTranform.position += possition;
         bossTranform.localScale += new Vector3(-0.8F, -0.8F, 0);
         newAvatar.GetComponent<Avatar>().setName(name);
