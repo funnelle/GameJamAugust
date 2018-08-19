@@ -199,7 +199,6 @@ public class WorkAreaController : MonoBehaviour {
     public Text tooltipTextP3;
 
     public void HandleDataMineMsg() {
-        MineMsgCount++;
         string[] DataMsgs = {"We have enough users that we can organize their data. For internal purposes only, of course.",
             "Our data entry team has their spreadsheets at the ready.",
             "We’ve rebranded surveys as “personality quizzes.” Users love them!",
@@ -211,7 +210,7 @@ public class WorkAreaController : MonoBehaviour {
             "We’ve created a “deepest darkest secrets” category in the spreadsheets.",
             "We’ve updated our Terms of Service. Privacy settings have reset to default. Whoops.",
             "Some people are quite literally worth less than others."};
-        if (MindMsgCount % 3 == 0) {
+        if (MineMsgCount % 3 == 0) {
             tooltipTextP1.text = DataMsgs[DataMsgNum];
             DataMsgNum++;
         }
@@ -219,10 +218,10 @@ public class WorkAreaController : MonoBehaviour {
         {
             DataMsgNum = 0;
         }
+        MineMsgCount++;
     }
 
     public void HandleDeployAdMsg() {
-        AdMsgCount++;
         string[] AdMsgs = {"What really matters is the bonds we make along the way. BONDr. Bound together.™",
             "BONDr: The next startup unicorn disrupting the social utility space. We’re joined now by thought leader Benton Solomon...",
             "Trust us. Our word is our BONDr.",
@@ -235,7 +234,7 @@ public class WorkAreaController : MonoBehaviour {
             "Don’t be lonely. Make bonds. Join BONDr.",
             "Build some bonds of association, with BONDr.",
             "We’re not a bond store; connections are made for free. BONDr. Bound together.™"};
-        if (MindMsgCount % 3 == 0)
+        if (AdMsgCount % 3 == 0)
         {
             tooltipTextP1.text = AdMsgs[AdMsgNum];
             AdMsgNum++;
@@ -243,10 +242,10 @@ public class WorkAreaController : MonoBehaviour {
         if(AdMsgNum > 12) {
             AdMsgNum = 0;
         }
+        AdMsgCount++;
     }
 
     public void HandleMonetizeMsg() {
-        MonetizeMsgCount++;
         string[] MonetizeMsgs = {"Ad firms want our user data, and our server costs are getting high. No choice but to put that data mining to use.",
             "Not only are ad firms buying our user data, they’re advertising on our platform. It’s a double win!",
             "Auto-playing videos are an easy way to get ad views.",
@@ -257,7 +256,7 @@ public class WorkAreaController : MonoBehaviour {
             "Our new GPS check-in app tracks users in real time. Plenty of clients would kill for this data. Hopefully not literally.",
             "A lot of people use our messaging app to cheat on their partners. It would be a shame if a “third party” ransomed that information.",
             "Voting patterns and political data are proving to be very profitable!"};
-        if (MindMsgCount % 3 == 0)
+        if (MonetizeMsgCount % 3 == 0)
         {
             tooltipTextP1.text = MonetizeMsgs[MonMsgNum];
             MonMsgNum++;
@@ -265,10 +264,10 @@ public class WorkAreaController : MonoBehaviour {
         if(MonMsgNum > 10) {
             MonMsgNum = 0;
         }
+        MonetizeMsgCount++;
     }
 
     public void HandleGigMsg() {
-        GigMsgCount++;
         string[] GigMsgs = {"We need workers, but training is a waste of money. Contractors are the way to go.",
             "Workers don’t care about benefits or insurance. They just need to be able to afford their next slice of avocado toast.",
             "Quantity over quality.",
@@ -279,7 +278,7 @@ public class WorkAreaController : MonoBehaviour {
             "Adding job bidding to our contractor network. Now they’ll compete to have the most “competitive” wage.",
             "Many of our contractors are drowning in debt, so it’s great that we give them the opportunity to work at all.",
             "We hired some contractors to let us shoot them with paintball guns on a drunken bet, and they THANKED us."};
-        if (MindMsgCount % 2 == 0)
+        if (GigMsgCount % 2 == 0)
         {
             tooltipTextP2.text = GigMsgs[GigMsgNum];
             GigMsgNum++;
@@ -287,10 +286,10 @@ public class WorkAreaController : MonoBehaviour {
         if(GigMsgNum>10){
             GigMsgNum = 0;
         }
+        GigMsgCount++;
     }
 
     public void HandleAutomateMsg() {
-        AutomateMsgCount++;
         string[] AutoMsgs = {"We’re facing a lot of overhead. It’s time to go lean. We can begin by automating data entry processes.",
             "We’ll save employees a ton of time by automating basic tasks like email responses, customer service, and coffee runs!",
             "Why write social media posts by hand when we can automatically recycle old posts throughout the day?",
@@ -301,7 +300,7 @@ public class WorkAreaController : MonoBehaviour {
             "Most of our bodies are automatic processes. Our business needs to be like a body.",
             "All this peace and quiet is really nice.",
             "Pretty soon there’ll be nothing left for any of us to do! Haha. Lol."};
-        if (MindMsgCount % 2 == 0)
+        if (AutomateMsgCount % 2 == 0)
         {
             tooltipTextP2.text = AutoMsgs[AutoMsgNum];
             AutoMsgNum++;
@@ -309,10 +308,10 @@ public class WorkAreaController : MonoBehaviour {
         if(AutoMsgNum>10) {
             AutoMsgNum = 0;
         }
+        AutomateMsgCount++;
     }
 
     public void HandleAcquihireMsg() {
-        AcquihireMsgCount++;
         string[] AcquiMsgs = {"We don’t really want Coffeester’s coffee delivery app, but we sure as heck want their programmers. Time to “acqui-hire.”",
             "The employees of all the best startups would really be better off with us.",
             "What’s yours is ours.",
@@ -323,7 +322,7 @@ public class WorkAreaController : MonoBehaviour {
             "When you buy out all the competition, people can’t quit.",
             "Currently lobbying for the right to bind workers to their desks. It’s in brand.",
             "JOIN US."};
-        if (MindMsgCount % 2 == 0)
+        if (AcquihireMsgCount % 2 == 0)
         {
             tooltipTextP2.text = AcquiMsgs[AcquiMsgNum];
             AcquiMsgNum++;
@@ -331,10 +330,10 @@ public class WorkAreaController : MonoBehaviour {
         if(AcquiMsgNum>10) {
             AcquiMsgNum = 0;
         }
+        AcquihireMsgCount++;
     }
 
     public void HandleBlockchainMsg() {
-        BlockchainMsgCount++;
         string[] BlockMsgs = {"We’re not 100% sure what it is, but we’re 100% sure we want it.",
             "36,000 people die in chain-related incidents every year. Mostly due to chainsaws. It’s our moral duty to block chains.",
             "It’s like you can just say blockchain and people will pay you.",
@@ -345,7 +344,7 @@ public class WorkAreaController : MonoBehaviour {
             "We’re not big fans of this “de-centralized” idea. We’re building our own blockchain. One we can control.",
             "We found “Satoshi Nakamoto,” inventor of blockchain. Turns out he’s a devoted servant of our primary investor. Who knew?",
             "Nakamoto-san has revealed the dark secrets of crypto. We have seen the inner eye of blockchain, and we weep with despair."};
-        if (MindMsgCount % 1 == 0)
+        if (BlockchainMsgCount % 1 == 0)
         {
             tooltipTextP3.text = BlockMsgs[BlockMsgNum];
             BlockMsgNum++;
@@ -353,10 +352,10 @@ public class WorkAreaController : MonoBehaviour {
         if(BlockMsgNum>10) {
             BlockMsgNum = 0;
         }
+        BlockchainMsgCount++;
     }
 
     public void HandleMixedRealityMsg() {
-        MixedMsgCount++;
         string[] MixedMsgs = {"Augmented reality goggles will ensure a BONDr display remains in our users’ vision at all times, even when they’re driving, or boning.",
             "With our new VR headset, you can scroll down your BONDr account… with your head!",
             "Our AR games are encouraging users to leave the house and explore! And they only occasionally get hit by cars!",
@@ -367,7 +366,7 @@ public class WorkAreaController : MonoBehaviour {
             "There is a movement in BONDrverse refuting the idea of a “real world.”",
             "Babies are now born automatically registered and logged into the BONDrverse service.",
             "Haha, we deleted the logout button. Let’s see if anyone notices. HAHAHA"};
-        if (MindMsgCount % 1 == 0)
+        if (MixedMsgCount % 1 == 0)
         {
             tooltipTextP3.text = MixedMsgs[MixedMsgNum];
             MixedMsgNum++;
@@ -375,10 +374,10 @@ public class WorkAreaController : MonoBehaviour {
         if(MixedMsgNum>10) {
             MixedMsgNum = 0;
         }
+        MixedMsgCount++;
     }
 
     public void HandleMindUploadMsg() {
-        MindMsgCount++;
         string[] MindMsgs = {"Users are online all the time anyway. Why not make it official?",
             "Some beta testers are becoming, quote, “husks of flesh with empty eyes.” Noted for QA.",
             "We’ve deleted uploaded users’ digital mouths, so they cannot scream.",
@@ -394,5 +393,6 @@ public class WorkAreaController : MonoBehaviour {
         if(MindMsgNum>7) {
             MindMsgNum = 0;
         }
+        MindMsgCount++;
     }
 }
