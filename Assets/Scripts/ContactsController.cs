@@ -5,21 +5,29 @@ using UnityEngine;
 
 public class ContactsController : MonoBehaviour {
 
-    Time time;
+    float startTime;
     public GameObject avatarPrefab;
     List<Avatar> scripts = new List<Avatar>();
+    public GameObject workController;
+    private WorkAreaController values;
+    private float eventNounce = 0;
+
 
     void Start () {
-        int top = -45;
-        int right = 0;
-        this.newAvatar(new Vector3(right, top + 0F, 0), "Cliff Pittman");
-        this.newAvatar(new Vector3(right, top + -50F, 0), "Diana Brown");
-        this.newAvatar(new Vector3(right, top + -100F, 0), "Benton Solomon (CEO/Thought Leader)");
-        this.newAvatar(new Vector3(right, top + -150F, 0), "Parker Livingston");
-        this.newAvatar(new Vector3(right, top + -200F, 0), "Ariana Cole");
-        this.newAvatar(new Vector3(right, top + -250F, 0), "Sage Williams (HR)");
-        this.newAvatar(new Vector3(right, top + -300F, 0), "News");
 
+        startTime = Time.time;
+        int top = -20;
+        int right = 0;
+        int interval = -90;
+        this.newAvatar(new Vector3(right, top + interval, 0), "Cliff Pittman");
+        this.newAvatar(new Vector3(right, top + interval * 2, 0), "Diana Brown");
+        this.newAvatar(new Vector3(right, top + interval * 3, 0), "Benton Solomon (CEO/Thought Leader)");
+        this.newAvatar(new Vector3(right, top + interval * 4, 0), "Parker Livingston");
+        this.newAvatar(new Vector3(right, top + interval * 5, 0), "Ariana Cole");
+        this.newAvatar(new Vector3(right, top + interval * 6, 0), "Sage Williams (HR)");
+        this.newAvatar(new Vector3(right, top + interval * 7, 0), "News");
+
+        values = workController.GetComponent<WorkAreaController>();
         foreach (Transform child in transform)
         {
             scripts.Add(child.GetComponent<Avatar>());
@@ -36,7 +44,8 @@ public class ContactsController : MonoBehaviour {
         RectTransform bossTranform = newAvatar.GetComponent<RectTransform>();
         bossTranform.position = new Vector3(this.transform.position.x, this.transform.position.y, 0);
         bossTranform.position += possition;
-        bossTranform.localScale += new Vector3(-0.8F, -0.8F, 0);
+        bossTranform.localScale += new Vector3(-0.1F, -0.1F, 0);
+
         newAvatar.GetComponent<Avatar>().setName(name);
     }
 
@@ -44,6 +53,12 @@ public class ContactsController : MonoBehaviour {
     // Update is called once per frame
     void Update () {
 
+        int data = values.DataSetsCount;
+        int revenue = values.RevenueCount;
+        int users = values.UsersCount;
+        int penta = values.PentaPointsCount;
+        int workers = values.WorkersCount;
+   
         foreach (Avatar child in scripts)
         {
             switch(child.getName())
@@ -73,34 +88,81 @@ public class ContactsController : MonoBehaviour {
         }
     }
 
-    private void handleNews(Avatar child)
+    private void handleNews(Avatar contact)
     {
-        child.notify("stuff");
+        if (Time.time < 1F)
+        {
+            contact.notify("PentaCo Enters Social Media Arena with BONDr", 1);
+        }
+        
     }
 
-    private void handleSage(Avatar child)
-    {
-        child.notify("stuff");
-    }
-
-    private void handleAriana(Avatar child)
-    {
-    }
-
-    private void handleParker(Avatar child)
+    private void handleSage(Avatar contact)
     {
     }
 
-    private void handleBenton(Avatar child)
+    private void handleAriana(Avatar contact)
     {
     }
 
-    private void handleDiana(Avatar child)
+    private void handleParker(Avatar contact)
+    {
+        if ( 2F < Time.time  && Time.time < 5F)  
+        {
+             contact.notify("Welcome to the team! :) I think we’re gogna have fun together.", 1);
+        }
+        if (5F < Time.time && Time.time < 7F)
+        {
+             contact.notify("Welcome to the team! :) I think we’re gonna have fun together. (edited)", 2);
+        }
+        if (870F < Time.time)
+        {
+            contact.notify("Something really terrible is going on. This company is not what it seems. I’m being called to HR now. I hope I’m wrong about this", 3);
+        }
+        if (873F < Time.time)
+        {
+            contact.notify(" (edited)", 4);
+        }
+
+
+
+
+    }
+
+    private void handleBenton(Avatar contact)
+    {
+        if (30F < Time.time)
+        {
+           contact.notify("This is a reminder for all employees that the ritual is less than five months away.It is mission critical that we reach our goal of X data sets.", 1);
+        }
+        if (32F < Time.time)
+        {
+            contact.notify("This is a reminder for all employees that our shareholder meeting is less than five months away. It is mission critical that we reach our goal of X data sets. (edited)", 2);
+        }
+        if (240F < Time.time)
+        {
+            contact.notify("This is a reminder that our shareholder meeting is four months away. If we do not reach our goal of X data sets by then, they will not be pleased.", 3);
+        }
+        if (420 < Time.time)
+        {
+            contact.notify("This is a reminder for all employees that our shareholder meeting is three months away. Please aim to exceed our target of X data sets, so that we may all be rewarded.", 4);
+        }
+        if (780 < Time.time)
+        {
+            contact.notify("This is a reminder for all employees that our shareholder meeting is one month from now. Reaching our goal of X data sets by the deadline is of utmost importance, and any employees not carrying their weight in this regard will be discarded", 5);
+        }
+
+    }
+
+    private void handleDiana(Avatar contact)
     {
     }
 
-    private void handleCliff(Avatar child)
+    private void handleCliff(Avatar contact)
     {
-        child.notify("stuff");
+        if (values.DataSetsCount == 200 )
+        {
+            contact.notify("Growth Hacker isn’t the most glamorous position, but you start bringing in revenue and I’ll see what I can do.", 1);
+        }
     }
 }
