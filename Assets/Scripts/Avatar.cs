@@ -14,15 +14,22 @@ public class Avatar : MonoBehaviour {
     public Image bell;
     public Sprite redBell;
     private Sprite tempSprite;
+    private WorkAreaController values;
+
     private float eventNounce;
     Dictionary<int, bool> events = new Dictionary<int, bool>();
 
     // Use this for initialization
     void Start () {
+
+
+
+        values = GameObject.Find("Action Hub").GetComponent<WorkAreaController>();
+
         avatarButton = GetComponent<Button>();
         bubble = avatarButton.transform.Find("Canvas").gameObject.GetComponent<Canvas>();
         bubbleText = avatarButton.transform.Find("Canvas").transform.Find("Text").GetComponent<Text>();
-        avatarButton.transform.Find("Canvas").transform.position = new Vector3(avatarButton.transform.position.x, avatarButton.transform.position.y, 0);
+        avatarButton.transform.Find("Canvas").transform.position = new Vector3(avatarButton.transform.position.x - 100, avatarButton.transform.position.y -30, 0);
 
         avatarButton.onClick.AddListener(OnClick);
         bell = avatarButton.transform.Find("Bell").GetComponent<Image>();
@@ -37,6 +44,11 @@ public class Avatar : MonoBehaviour {
     
         bubble.enabled = false;
         expanded = false;
+
+        GameObject responseOneButton = bubble.transform.Find("AgreeButton").gameObject;
+        responseOneButton.SetActive(false);
+        GameObject responseTwoButton = bubble.transform.Find("DisagreeButton").gameObject;
+        responseTwoButton.SetActive(false);
     }
 	
 	// Update is called once per frame
@@ -45,7 +57,7 @@ public class Avatar : MonoBehaviour {
 
     public void notify(string text, int id)
     {
-        Debug.Log(id);
+   
         bool item;
         if (!events.TryGetValue(id, out item))
         {
@@ -57,42 +69,51 @@ public class Avatar : MonoBehaviour {
         }
     }
 
-    private bool agree()
+    private void resolve(int[] changedValues, int id)
     {
-        Button responseOneButton = avatarButton.transform.Find("Canvas").transform.Find("AgreeButton").GetComponent<Button>();
-        responseOneButton.enabled = false;
-        Button responseTwoButton = avatarButton.transform.Find("Canvas").transform.Find("DisAgreeButton").GetComponent<Button>();
-        responseTwoButton.enabled = false;
-        return true;
+        bool item;
+        if (!events.TryGetValue(id, out item))
+        {
+            events[id] = true;
+            Debug.Log(changedValues[3]);
+            values.DataSetsCount += changedValues[0];
+            values.RevenueCount += changedValues[1];
+            values.UsersCount += changedValues[2];
+            values.PentaPointsCount += changedValues[3];
+            values.WorkersCount += changedValues[4];
+            
+            GameObject responseOneButton = bubble.transform.Find("AgreeButton").gameObject;
+            responseOneButton.SetActive(false);
+            GameObject responseTwoButton = bubble.transform.Find("DisagreeButton").gameObject;
+            responseTwoButton.SetActive(false);
+            unotify();
+            collapse();
+            values.setCountText();
+        }
     }
-
-    private bool disagree()
-    {
-        Button responseOneButton = avatarButton.transform.Find("Canvas").transform.Find("AgreeButton").GetComponent<Button>();
-        responseOneButton.enabled = false;
-        Button responseTwoButton = avatarButton.transform.Find("Canvas").transform.Find("DisAgreeButton").GetComponent<Button>();
-        responseTwoButton.enabled = false;
-        return false;
-    }
-
-    public int respond(string responseOne, string responseTwo)
-    {
     
-        Button responseOneButton = avatarButton.transform.Find("Canvas").transform.Find("AgreeButton").GetComponent<Button>();
-        responseOneButton.enabled = true;
 
-        Text responseOneText = avatarButton.transform.Find("Canvas").transform.Find("AgreeButton").GetComponent<Text>();
+    public void respond(string responseOne, string responseTwo, int[] valuesWhenAggree, int[] valuesWhenDisAggree, int id)
+    {
+
+
+        GameObject responseOneButton = bubble.transform.Find("AgreeButton").gameObject;
+        responseOneButton.SetActive(true);
+        GameObject responseTwoButton = bubble.transform.Find("DisagreeButton").gameObject;
+        responseTwoButton.SetActive(true);
+
+        Button responseOneButtonB = responseOneButton.GetComponent<Button>();
+        Button responseTwoButtonB = responseTwoButton.GetComponent<Button>();
+
+        Text responseOneText = responseOneButtonB.transform.Find("Text").GetComponent<Text>();
         responseOneText.text = responseOne;
 
-        Button responseTwoButton = avatarButton.transform.Find("Canvas").transform.Find("DisAgreeButton").GetComponent<Button>();
-        responseTwoButton.enabled = true;
-
-        Text responseTwoText = avatarButton.transform.Find("Canvas").transform.Find("DisAgreeButton").GetComponent<Text>();
+        Text responseTwoText = responseTwoButtonB.transform.Find("Text").GetComponent<Text>();
         responseTwoText.text = responseTwo;
 
+        responseOneButtonB.onClick.AddListener(delegate { resolve(valuesWhenAggree, id); });
+        responseTwoButtonB.onClick.AddListener(delegate { resolve(valuesWhenDisAggree, id); });
 
-
-        return 1;
     }
     public void setName(string name)
     {
