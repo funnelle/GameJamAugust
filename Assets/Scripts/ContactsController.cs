@@ -11,12 +11,11 @@ public class ContactsController : MonoBehaviour {
     public GameObject workController;
     private WorkAreaController values;
     private float eventNounce = 0;
-
-
+    
     void Start () {
 
         startTime = Time.time;
-        int top = -20;
+        int top = 20;
         int right = 0;
         int interval = -90;
         this.newAvatar(new Vector3(right, top + interval, 0), "Cliff Pittman");
@@ -94,6 +93,18 @@ public class ContactsController : MonoBehaviour {
         {
             contact.notify("PentaCo Enters Social Media Arena with BONDr", 1);
         }
+        if (values.MixedMsgCount > 3)
+        {
+            contact.notify("New Data Privacy Bill Draft Long Past Due, Experts Say", 2);
+        }
+        if (Time.time > 885)
+        {
+            contact.notify("Missing Persons Reports on the Rise", 3);
+        }
+        if (values.WorkersCount > 49)
+        {
+            contact.notify("Hate Groups Using Social Media to Organize, New Study Says", 4);
+        }
         
     }
 
@@ -117,6 +128,20 @@ public class ContactsController : MonoBehaviour {
         {
             contact.notify("It looks like they like what you’re doing here at PentaCo. Just… Don’t get in over your head. And congratulations.", 3);
         }
+   
+        if (values.WorkersCount > 79)
+        {
+            contact.notify("You know what time it is? KARAOKE TIME!!! You in?!", 4);
+            contact.respond("Sounds fun!", "As if.", new int[] { 0, 0, 0, -10, 0 }, new int[] { 0, 0, 0, 10, 0 }, 5);
+        }
+
+        if (values.MixedMsgCount > 2) {
+            contact.notify("Don’t think you can get out of karaoke just because you’re on a higher floor! (dancing lady emoji", 6);
+            contact.respond("(thumbs up emoji)", "(thumbs down emoji)", new int[] { 0, 0, 0, -15, 0 }, new int[] { 0, 0, 0, 15, 0 }, 5);
+        }
+        
+
+
     }
 
     private void handleParker(Avatar contact)
@@ -141,6 +166,10 @@ public class ContactsController : MonoBehaviour {
         if (90F < Time.time)
         {
             contact.notify("Me and my desk mate Vanessa are going out tonight.You should come, too!", 5);
+        }
+        if (460 < Time.time)
+        {
+            contact.notify("Hey, you haven’t heard from Vanessa recently, have you?", 6);
         }
 
         //fourth monitize action
@@ -181,14 +210,12 @@ public class ContactsController : MonoBehaviour {
         {
             contact.notify("As our new Senior Loved Ones Unification Manager, the success of the company must be your number one priority", 6);
         }
-        //asdfasdf
-        /*
-        if ()
+        if (values.MixedMsgCount > 4)
         {
             contact.notify("The government is preparing a privacy rights bill that could be less than ideal. I need you to arrange for a lobby group to influence the legislation in our favour. Responses: “We won’t let the bill pass.", 7);
             contact.respond("We wont let this bill pass!", "I won’t interfere with the process.", new int[] { 0, 2000, 150, 25, 0 }, new int[] { 0, -1500, -150, -25, 0 }, 8);
         }
-        */
+        
 
     }
 
@@ -198,6 +225,16 @@ public class ContactsController : MonoBehaviour {
         {
             contact.notify("Welcome to the world of Family Acquisitions Facilitators. Stay a while.", 1);
         }
+        if (values.WorkersCount > 49)
+        {
+            contact.notify("I know there are some people saying truly heinous things on our platform, but their data is valuable as well, so I would advise you to forget about them.", 2);
+            contact.respond("They need to go.", "Yes ma’am.", new int[] { 200, 1200, 200, -15, 0 }, new int[] { 0, 2500, 0, 15, 0 }, 3);
+        }
+        if (values.WorkersCount  > 29)
+        {
+            contact.notify("The social justice bloggers are after us for poor working conditions. We’d better manipulate BONDr’s algorithms so our users aren’t seeing this.", 4);
+            contact.respond("I’m on it", "I’d rather not.", new int[] { 0, 1200, 0, 15, 0 }, new int[] { 0, 3000, 0, -15, 0 }, 5);
+        }
     }
 
     private void handleCliff(Avatar contact)
@@ -206,15 +243,16 @@ public class ContactsController : MonoBehaviour {
         {
             contact.notify("Growth Hacker isn’t the most glamorous position, but you start bringing in revenue and I’ll see what I can do.", 1);
         }
-        if (values.RevenueCount > 500)
+        else if (values.RevenueCount > 3000)
+        {
+            contact.notify("Good job, kid. You’re moving up.", 4);
+        }
+        else if (values.RevenueCount > 500)
         {
             contact.notify("What do you think about using more memes in our ads? The kids like those, right? And we can get our name out faster with less work.", 2);
             contact.respond("Sounds Good!", "Let's not", new int[] {0,0,20,25,0}, new int[] { 0, 0, 0, -5, 0 }, 3);
         }
-        if (values.RevenueCount > 3000)
-        {
-            contact.notify("Good job, kid. You’re moving up.", 4);
-        }
+
 
 
 

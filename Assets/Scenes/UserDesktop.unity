@@ -3815,7 +3815,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0de34510f6591744db17a65ce066ba7d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  avatarPrefab: {fileID: 1862862547075504, guid: 74369fbae4949584fa799f76f362bf71,
+  avatarPrefab: {fileID: 1467302153249478, guid: 57b8e5b5aa379f64b86b5cdd06061f49,
     type: 2}
   workController: {fileID: 1035095019}
 --- !u!114 &1701422209

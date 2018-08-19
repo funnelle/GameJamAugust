@@ -71,50 +71,51 @@ public class Avatar : MonoBehaviour {
 
     private void resolve(int[] changedValues, int id)
     {
-        bool item;
-        if (!events.TryGetValue(id, out item))
-        {
-            events[id] = true;
-            Debug.Log(changedValues[3]);
-            values.DataSetsCount += changedValues[0];
-            values.RevenueCount += changedValues[1];
-            values.UsersCount += changedValues[2];
-            values.PentaPointsCount += changedValues[3];
-            values.WorkersCount += changedValues[4];
-            
-            GameObject responseOneButton = bubble.transform.Find("AgreeButton").gameObject;
-            responseOneButton.SetActive(false);
-            GameObject responseTwoButton = bubble.transform.Find("DisagreeButton").gameObject;
-            responseTwoButton.SetActive(false);
-            unotify();
-            collapse();
-
-            values.SetCountText();
-        }
+ 
+        events[id] = true;
+        Debug.Log(changedValues[3]);
+        values.DataSetsCount += changedValues[0];
+        values.RevenueCount += changedValues[1];
+        values.UsersCount += changedValues[2];
+        values.PentaPointsCount += changedValues[3];
+        values.WorkersCount += changedValues[4];
+           
+        collapse();
+        values.SetCountText();
+        
     }
     
 
     public void respond(string responseOne, string responseTwo, int[] valuesWhenAggree, int[] valuesWhenDisAggree, int id)
     {
+        bool item;
+        if (!events.TryGetValue(id, out item))
+        {
+            events[id] = true;
+            
+            GameObject responseOneButton = bubble.transform.Find("AgreeButton").gameObject;
+            responseOneButton.SetActive(true);
+            GameObject responseTwoButton = bubble.transform.Find("DisagreeButton").gameObject;
+            responseTwoButton.SetActive(true);
+
+            unotify();
+            collapse();
+
+            values.SetCountText();
 
 
-        GameObject responseOneButton = bubble.transform.Find("AgreeButton").gameObject;
-        responseOneButton.SetActive(true);
-        GameObject responseTwoButton = bubble.transform.Find("DisagreeButton").gameObject;
-        responseTwoButton.SetActive(true);
+            Button responseOneButtonB = responseOneButton.GetComponent<Button>();
+            Button responseTwoButtonB = responseTwoButton.GetComponent<Button>();
 
-        Button responseOneButtonB = responseOneButton.GetComponent<Button>();
-        Button responseTwoButtonB = responseTwoButton.GetComponent<Button>();
+            Text responseOneText = responseOneButtonB.transform.Find("Text").GetComponent<Text>();
+            responseOneText.text = responseOne;
 
-        Text responseOneText = responseOneButtonB.transform.Find("Text").GetComponent<Text>();
-        responseOneText.text = responseOne;
+            Text responseTwoText = responseTwoButtonB.transform.Find("Text").GetComponent<Text>();
+            responseTwoText.text = responseTwo;
 
-        Text responseTwoText = responseTwoButtonB.transform.Find("Text").GetComponent<Text>();
-        responseTwoText.text = responseTwo;
-
-        responseOneButtonB.onClick.AddListener(delegate { resolve(valuesWhenAggree, id); });
-        responseTwoButtonB.onClick.AddListener(delegate { resolve(valuesWhenDisAggree, id); });
-
+            responseOneButtonB.onClick.AddListener(delegate { resolve(valuesWhenAggree, id); });
+            responseTwoButtonB.onClick.AddListener(delegate { resolve(valuesWhenDisAggree, id); });
+        }
     }
     public void setName(string name)
     {
@@ -167,6 +168,11 @@ public class Avatar : MonoBehaviour {
     }
     void collapse()
     {
+        GameObject responseOneButton = bubble.transform.Find("AgreeButton").gameObject;
+        responseOneButton.SetActive(false);
+        GameObject responseTwoButton = bubble.transform.Find("DisagreeButton").gameObject;
+        responseTwoButton.SetActive(false);
+
         expanded = false;
         bubble.enabled = false;
         unotify();
