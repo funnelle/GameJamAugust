@@ -199,6 +199,7 @@ public class WorkAreaController : MonoBehaviour {
     public Text tooltipTextP3;
 
     public void HandleDataMineMsg() {
+        MineMsgCount++;
         string[] DataMsgs = {"We have enough users that we can organize their data. For internal purposes only, of course.",
             "Our data entry team has their spreadsheets at the ready.",
             "We’ve rebranded surveys as “personality quizzes.” Users love them!",
@@ -221,6 +222,7 @@ public class WorkAreaController : MonoBehaviour {
     }
 
     public void HandleDeployAdMsg() {
+        AdMsgCount++;
         string[] AdMsgs = {"What really matters is the bonds we make along the way. BONDr. Bound together.™",
             "BONDr: The next startup unicorn disrupting the social utility space. We’re joined now by thought leader Benton Solomon...",
             "Trust us. Our word is our BONDr.",
@@ -244,6 +246,7 @@ public class WorkAreaController : MonoBehaviour {
     }
 
     public void HandleMonetizeMsg() {
+        MonetizeMsgCount++;
         string[] MonetizeMsgs = {"Ad firms want our user data, and our server costs are getting high. No choice but to put that data mining to use.",
             "Not only are ad firms buying our user data, they’re advertising on our platform. It’s a double win!",
             "Auto-playing videos are an easy way to get ad views.",
@@ -265,6 +268,7 @@ public class WorkAreaController : MonoBehaviour {
     }
 
     public void HandleGigMsg() {
+        GigMsgCount++;
         string[] GigMsgs = {"We need workers, but training is a waste of money. Contractors are the way to go.",
             "Workers don’t care about benefits or insurance. They just need to be able to afford their next slice of avocado toast.",
             "Quantity over quality.",
@@ -286,6 +290,7 @@ public class WorkAreaController : MonoBehaviour {
     }
 
     public void HandleAutomateMsg() {
+        AutomateMsgCount++;
         string[] AutoMsgs = {"We’re facing a lot of overhead. It’s time to go lean. We can begin by automating data entry processes.",
             "We’ll save employees a ton of time by automating basic tasks like email responses, customer service, and coffee runs!",
             "Why write social media posts by hand when we can automatically recycle old posts throughout the day?",
@@ -307,6 +312,7 @@ public class WorkAreaController : MonoBehaviour {
     }
 
     public void HandleAcquihireMsg() {
+        AcquihireMsgCount++;
         string[] AcquiMsgs = {"We don’t really want Coffeester’s coffee delivery app, but we sure as heck want their programmers. Time to “acqui-hire.”",
             "The employees of all the best startups would really be better off with us.",
             "What’s yours is ours.",
@@ -328,6 +334,7 @@ public class WorkAreaController : MonoBehaviour {
     }
 
     public void HandleBlockchainMsg() {
+        BlockchainMsgCount++;
         string[] BlockMsgs = {"We’re not 100% sure what it is, but we’re 100% sure we want it.",
             "36,000 people die in chain-related incidents every year. Mostly due to chainsaws. It’s our moral duty to block chains.",
             "It’s like you can just say blockchain and people will pay you.",
@@ -349,6 +356,7 @@ public class WorkAreaController : MonoBehaviour {
     }
 
     public void HandleMixedRealityMsg() {
+        MixedMsgCount++;
         string[] MixedMsgs = {"Augmented reality goggles will ensure a BONDr display remains in our users’ vision at all times, even when they’re driving, or boning.",
             "With our new VR headset, you can scroll down your BONDr account… with your head!",
             "Our AR games are encouraging users to leave the house and explore! And they only occasionally get hit by cars!",
@@ -370,6 +378,7 @@ public class WorkAreaController : MonoBehaviour {
     }
 
     public void HandleMindUploadMsg() {
+        MindMsgCount++;
         string[] MindMsgs = {"Users are online all the time anyway. Why not make it official?",
             "Some beta testers are becoming, quote, “husks of flesh with empty eyes.” Noted for QA.",
             "We’ve deleted uploaded users’ digital mouths, so they cannot scream.",
