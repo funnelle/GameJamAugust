@@ -905,11 +905,11 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 811509233}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 242, y: -167}
+  m_AnchoredPosition: {x: 242, y: -147}
   m_SizeDelta: {x: 457.2, y: 27.4}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &517046143
@@ -1301,81 +1301,6 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 642613118}
   m_CullTransparentMesh: 0
---- !u!1 &665516012
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 665516013}
-  - component: {fileID: 665516015}
-  - component: {fileID: 665516014}
-  m_Layer: 5
-  m_Name: New Followers
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &665516013
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 665516012}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 811509233}
-  m_RootOrder: 4
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 241.99997, y: -85}
-  m_SizeDelta: {x: 457.2, y: 28.1}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &665516014
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 665516012}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
-  m_RaycastTarget: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
-      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 24
-    m_FontStyle: 0
-    m_BestFit: 0
-    m_MinSize: 2
-    m_MaxSize: 40
-    m_Alignment: 0
-    m_AlignByGeometry: 0
-    m_RichText: 1
-    m_HorizontalOverflow: 0
-    m_VerticalOverflow: 0
-    m_LineSpacing: 1
-  m_Text: 'New Followers:'
---- !u!222 &665516015
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 665516012}
-  m_CullTransparentMesh: 0
 --- !u!1 &691424301
 GameObject:
   m_ObjectHideFlags: 0
@@ -1555,12 +1480,10 @@ RectTransform:
   - {fileID: 75933087}
   - {fileID: 1315732805}
   - {fileID: 1038680564}
-  - {fileID: 665516013}
   - {fileID: 1489103500}
   - {fileID: 517046142}
   - {fileID: 2092513441}
   - {fileID: 1702201565}
-  - {fileID: 1474061323}
   - {fileID: 991397670}
   m_Father: {fileID: 0}
   m_RootOrder: 2
@@ -1669,7 +1592,7 @@ RectTransform:
   - {fileID: 1089298653}
   - {fileID: 1701422207}
   m_Father: {fileID: 811509233}
-  m_RootOrder: 10
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -1799,21 +1722,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   DataMineButton: {fileID: 1314403874}
   DeployAdButton: {fileID: 85754716}
-  SellDataButton: {fileID: 2051843247}
+  MonetizeButton: {fileID: 2051843247}
+  GigWorkersButton: {fileID: 253596285}
+  AutomateButton: {fileID: 1963242752}
+  AcquihireButton: {fileID: 1148304355}
+  BlockchainButton: {fileID: 1196948718}
+  MixedRealityButton: {fileID: 142576141}
+  MindUploadingButton: {fileID: 2034609843}
   DataSetsCount: 0
-  NewFollowersCount: 0
   RevenueCount: 0
   UsersCount: 0
   PentaPointsCount: 0
-  ContractorsCount: 0
-  BotCount: 0
+  WorkersCount: 0
   DataSetsText: {fileID: 1038680565}
-  NewFollowersText: {fileID: 665516014}
   RevenueText: {fileID: 1489103501}
   UsersText: {fileID: 517046143}
   PentaPointsText: {fileID: 2092513442}
-  ContractorsText: {fileID: 1702201566}
-  BotText: {fileID: 1474061324}
+  WorkersText: {fileID: 1702201566}
 --- !u!1 &1038680563
 GameObject:
   m_ObjectHideFlags: 0
@@ -1846,7 +1771,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 241.99997, y: -46.179962}
+  m_AnchoredPosition: {x: 241.99997, y: -53}
   m_SizeDelta: {x: 457.2, y: 27.24}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1038680565
@@ -2848,81 +2773,6 @@ MonoBehaviour:
   timerImage: {fileID: 1401726118}
   buttonName: {fileID: 85754716}
   totalTime: 5
---- !u!1 &1474061322
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1474061323}
-  - component: {fileID: 1474061325}
-  - component: {fileID: 1474061324}
-  m_Layer: 5
-  m_Name: Bots
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &1474061323
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1474061322}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.0000049, y: 1.0000049, z: 1.0000049}
-  m_Children: []
-  m_Father: {fileID: 811509233}
-  m_RootOrder: 9
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 242, y: -281}
-  m_SizeDelta: {x: 457.2, y: 27.5}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1474061324
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1474061322}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
-  m_RaycastTarget: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
-      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 24
-    m_FontStyle: 0
-    m_BestFit: 0
-    m_MinSize: 2
-    m_MaxSize: 40
-    m_Alignment: 0
-    m_AlignByGeometry: 0
-    m_RichText: 1
-    m_HorizontalOverflow: 0
-    m_VerticalOverflow: 0
-    m_LineSpacing: 1
-  m_Text: 'Bots:'
---- !u!222 &1474061325
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1474061322}
-  m_CullTransparentMesh: 0
 --- !u!1 &1489103499
 GameObject:
   m_ObjectHideFlags: 0
@@ -2951,11 +2801,11 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 811509233}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 241.99997, y: -126}
+  m_AnchoredPosition: {x: 241.99997, y: -100}
   m_SizeDelta: {x: 457.2, y: 27.4}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1489103501
@@ -3182,7 +3032,7 @@ GameObject:
   - component: {fileID: 1702201567}
   - component: {fileID: 1702201566}
   m_Layer: 5
-  m_Name: Contractors
+  m_Name: Workers
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3199,11 +3049,11 @@ RectTransform:
   m_LocalScale: {x: 1.0000049, y: 1.0000049, z: 1.0000049}
   m_Children: []
   m_Father: {fileID: 811509233}
-  m_RootOrder: 8
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 242, y: -243}
+  m_AnchoredPosition: {x: 242, y: -247}
   m_SizeDelta: {x: 457.2, y: 27.5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1702201566
@@ -3238,7 +3088,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Contractors:'
+  m_Text: 'Workers:'
 --- !u!222 &1702201567
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -4043,7 +3893,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1035095022}
-        m_MethodName: SellData
+        m_MethodName: Monetize
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -4123,11 +3973,11 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 811509233}
-  m_RootOrder: 7
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 241.99997, y: -205}
+  m_AnchoredPosition: {x: 241.99997, y: -196}
   m_SizeDelta: {x: 457.2, y: 27.5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2092513442
