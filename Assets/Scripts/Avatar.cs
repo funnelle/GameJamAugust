@@ -47,6 +47,10 @@ public class Avatar : MonoBehaviour {
         notified = true;
     }
 
+    public void setName(string name)
+    {
+        GetComponentInChildren<Text>().text = name;
+    }
     public string getName()
     {
         return GetComponentInChildren<Text>().text;
