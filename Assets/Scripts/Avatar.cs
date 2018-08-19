@@ -88,7 +88,7 @@ public class Avatar : MonoBehaviour {
             responseTwoButton.SetActive(false);
             unotify();
             collapse();
-            values.setCountText();
+            //values.setCountText();
         }
     }
     
