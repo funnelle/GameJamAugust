@@ -97,6 +97,7 @@ public class WorkAreaController : MonoBehaviour {
         if (RevenueCount>=1000) {
             RevenueCount -= 1000;
             WorkersCount += 5;
+            WorkersEarned += 5;
             SetCountText();
             StartCoroutine(DisableButton(GigWorkersButton, 25f));
         }
@@ -117,6 +118,7 @@ public class WorkAreaController : MonoBehaviour {
             RevenueCount -= 3000;
             UsersCount += 1200;
             WorkersCount += 12;
+            WorkersEarned += 12;
             SetCountText();
             StartCoroutine(DisableButton(AcquihireButton, 30f));
         }
@@ -139,9 +141,11 @@ public class WorkAreaController : MonoBehaviour {
     }
 
     public void MindUploading() {
-        if (UsersCount >= 3000) {
+        if ((UsersCount >= 3000) && (WorkersCount>=30)) {
             UsersCount -= 3000;
-            DataSetsCount += 3000;
+            WorkersCount -= 30;
+            DataSetsCount += 3030;
+            PentaPointsCount += 50;
             SetCountText();
             StartCoroutine(DisableButton(MindUploadingButton, 30f));
         }
