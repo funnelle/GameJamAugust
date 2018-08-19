@@ -20,6 +20,8 @@ public class Avatar : MonoBehaviour {
         avatarButton = GetComponent<Button>();
         bubble = avatarButton.transform.Find("Canvas").gameObject.GetComponent<Canvas>();
         bubbleText = avatarButton.transform.Find("Canvas").transform.Find("Text").GetComponent<Text>();
+        avatarButton.transform.Find("Canvas").transform.position += new Vector3(50, 0, 0);
+
         avatarButton.onClick.AddListener(OnClick);
         bell = avatarButton.transform.Find("Bell").GetComponent<Image>();
 
@@ -39,7 +41,7 @@ public class Avatar : MonoBehaviour {
 	void Update () {
     }
 
-    void notify(string text)
+    public void notify(string text)
     {
         tempSprite = bell.sprite;
         bell.sprite = redBell;
@@ -97,6 +99,11 @@ public class Avatar : MonoBehaviour {
     {
         expanded = false;
         bubble.enabled = false;
+    }
+
+    public bool response(string agree, string diagree)
+    {
+        return true;
     }
 
 }

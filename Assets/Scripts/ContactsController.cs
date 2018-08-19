@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -7,7 +8,6 @@ public class ContactsController : MonoBehaviour {
     Time time;
     public GameObject avatarPrefab;
     List<Avatar> scripts = new List<Avatar>();
-    // Use this for initialization
 
     void Start () {
         int top = 140;
@@ -42,12 +42,63 @@ public class ContactsController : MonoBehaviour {
     // Update is called once per frame
     void Update () {
 
-        /*
         foreach (Avatar child in scripts)
         {
-            Debug.Log(child.getName());
-            //scripts.Add(child.GetComponent<Avatar>());
+            switch(child.getName())
+            {
+                case "Cliff Pittman":
+                    handleCliff(child);
+                    break;
+                case "Diana Brown":
+                    handleDiana(child);
+                    break;
+                case "Benton Solomon (CEO/Thought Leader)":
+                    handleBenton(child);
+                    break;
+                case "Parker Livingston":
+                    handleParker(child);
+                    break;
+                case "Ariana Cole":
+                    handleAriana(child);
+                    break;
+                case "Sage Williams (HR)":
+                    handleSage(child);
+                    break;
+                case "News":
+                    handleNews(child);
+                    break;
+            }
         }
-        */
+    }
+
+    private void handleNews(Avatar child)
+    {
+        child.notify("stuff");
+    }
+
+    private void handleSage(Avatar child)
+    {
+        child.notify("stuff");
+    }
+
+    private void handleAriana(Avatar child)
+    {
+    }
+
+    private void handleParker(Avatar child)
+    {
+    }
+
+    private void handleBenton(Avatar child)
+    {
+    }
+
+    private void handleDiana(Avatar child)
+    {
+    }
+
+    private void handleCliff(Avatar child)
+    {
+        child.notify("stuff");
     }
 }
