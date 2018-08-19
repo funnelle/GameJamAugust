@@ -57,8 +57,9 @@ public class WorkAreaController : MonoBehaviour {
         PentaPointsText.text = PentaPointsCount.ToString();
         WorkersText.text = WorkersCount.ToString();
     }
-    /*
+
     public void Update() {
+        /*
         if(MonetizationLoops>=3) {
             AcquisitionsButton.interactable = true;
         }
@@ -66,8 +67,10 @@ public class WorkAreaController : MonoBehaviour {
         if(WorkersEarned>=100) {
             ResearchButton.interactable = true;
         }
+        */
+
     }
-    */
+
 
     public void DataMine() {
         if (UsersCount >= 200) {
@@ -171,17 +174,17 @@ public class WorkAreaController : MonoBehaviour {
     }
 
     //Button Info Handling
-    private int MineMsgCount = 0;
-    private int AdMsgCount = 0;
-    private int MonetizeMsgCount = 0;
-    private int GigMsgCount = 0;
-    private int AutomateMsgCount = 0;
-    private int AcquihireMsgCount = 0;
-    private int BlockchainMsgCount = 0;
-    private int MixedMsgCount = 0;
-    private int MindMsgCount = 0;
+    public int MineMsgCount = 0;
+    public int AdMsgCount = 0;
+    public int MonetizeMsgCount = 0;
+    public int GigMsgCount = 0;
+    public int AutomateMsgCount = 0;
+    public int AcquihireMsgCount = 0;
+    public int BlockchainMsgCount = 0;
+    public int MixedMsgCount = 0;
+    public int MindMsgCount = 0;
 
-    private Text tooltipText;
+    public Text tooltipText;
 
     public void HandleDataMineMsg() {
         int msgNum = 0;
