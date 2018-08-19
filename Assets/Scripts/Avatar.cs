@@ -17,10 +17,22 @@ public class Avatar : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+        avatarButton = GetComponent<Button>();
+        bubble = avatarButton.transform.Find("Canvas").gameObject.GetComponent<Canvas>();
+        bubbleText = avatarButton.transform.Find("Canvas").transform.Find("Text").GetComponent<Text>();
         avatarButton.onClick.AddListener(OnClick);
+        bell = avatarButton.transform.Find("Bell").GetComponent<Image>();
+
+        Sprite[] sprites;
+        sprites = Resources.LoadAll<Sprite>("RedBell");
+        redBell = sprites[0];
+
+        Sprite[] sprites2;
+        sprites2 = Resources.LoadAll<Sprite>("Glyphicons");
+        bell.sprite = sprites2[0];
+    
         bubble.enabled = false;
         expanded = false;
-        notify("Hello");
     }
 	
 	// Update is called once per frame

@@ -3,6 +3,9 @@ guid: 600e099cf7ca45e42bc7f3452bcd20b2
 TextureImporter:
   fileIDToRecycleName:
     21300000: brankic1979-icon-set_preview_0
+    21300002: Glyphicons_0
+    21300004: Glyphicons_1
+    21300006: Glyphicons_2
   externalObjects: {}
   serializedVersion: 7
   mipmaps:
@@ -85,21 +88,21 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: brankic1979-icon-set_preview_0
+      name: Glyphicons_0
       rect:
         serializedVersion: 2
-        x: 529
-        y: 586
-        width: 50
-        height: 41
+        x: 531
+        y: 583
+        width: 45
+        height: 44
       alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 1, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 860bb8f425e4b144e82bc522977abc6e
+      spriteID: 50d00aea133cfb649b9a701f05ed340a
       vertices: []
       indices: 
       edges: []
