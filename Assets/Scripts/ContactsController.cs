@@ -108,6 +108,15 @@ public class ContactsController : MonoBehaviour {
 
     private void handleAriana(Avatar contact)
     {
+        if (values.WorkersCount > 19)
+        {
+            contact.notify("Hey office buddy! A few of us are going for karaoke later. You should come! :D", 1);
+            contact.respond("Sounds fun!", "As if.", new int[] { 0, 0, 0, -10, 0 }, new int[] { 0, 0, 0, 10, 0 }, 2);
+        }
+        if (values.WorkersCount > 99)
+        {
+            contact.notify("It looks like they like what you’re doing here at PentaCo. Just… Don’t get in over your head. And congratulations.", 3);
+        }
     }
 
     private void handleParker(Avatar contact)
@@ -127,6 +136,18 @@ public class ContactsController : MonoBehaviour {
         if (873F < Time.time)
         {
             contact.notify(" (edited)", 4);
+        }
+
+        if (90F < Time.time)
+        {
+            contact.notify("Me and my desk mate Vanessa are going out tonight.You should come, too!", 5);
+        }
+
+        //fourth monitize action
+        if (4000 < values.RevenueCount)
+        {
+            contact.notify("Look at you, big shot!Don’t forget about us little people, haha.Coffee later ?", 6);
+            contact.respond("You know it!", "Another time.", new int[] { 0, 0, 0, -5, 0 }, new int[] { 0, 0, 0, 5, 0 }, 7);
         }
 
 
@@ -151,16 +172,32 @@ public class ContactsController : MonoBehaviour {
         if (420 < Time.time)
         {
             contact.notify("This is a reminder for all employees that our shareholder meeting is three months away. Please aim to exceed our target of X data sets, so that we may all be rewarded.", 4);
-        }
+        }   
         if (780 < Time.time)
         {
             contact.notify("This is a reminder for all employees that our shareholder meeting is one month from now. Reaching our goal of X data sets by the deadline is of utmost importance, and any employees not carrying their weight in this regard will be discarded", 5);
         }
+        if (values.WorkersCount > 99)
+        {
+            contact.notify("As our new Senior Loved Ones Unification Manager, the success of the company must be your number one priority", 6);
+        }
+        //asdfasdf
+        /*
+        if ()
+        {
+            contact.notify("The government is preparing a privacy rights bill that could be less than ideal. I need you to arrange for a lobby group to influence the legislation in our favour. Responses: “We won’t let the bill pass.", 7);
+            contact.respond("We wont let this bill pass!", "I won’t interfere with the process.", new int[] { 0, 2000, 150, 25, 0 }, new int[] { 0, -1500, -150, -25, 0 }, 8);
+        }
+        */
 
     }
 
     private void handleDiana(Avatar contact)
     {
+        if (values.RevenueCount > 3000)
+        {
+            contact.notify("Welcome to the world of Family Acquisitions Facilitators. Stay a while.", 1);
+        }
     }
 
     private void handleCliff(Avatar contact)
@@ -174,6 +211,13 @@ public class ContactsController : MonoBehaviour {
             contact.notify("What do you think about using more memes in our ads? The kids like those, right? And we can get our name out faster with less work.", 2);
             contact.respond("Sounds Good!", "Let's not", new int[] {0,0,20,25,0}, new int[] { 0, 0, 0, -5, 0 }, 3);
         }
+        if (values.RevenueCount > 3000)
+        {
+            contact.notify("Good job, kid. You’re moving up.", 4);
+        }
+
+
+
         
     }
 }
