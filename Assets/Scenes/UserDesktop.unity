@@ -434,7 +434,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1035095022}
-        m_MethodName: DeployAd
+        m_MethodName: MixedReality
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -632,7 +632,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1035095022}
-        m_MethodName: DataMine
+        m_MethodName: GigWorkers
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2172,7 +2172,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1035095022}
-        m_MethodName: SellData
+        m_MethodName: Acquihire
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2379,7 +2379,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1035095022}
-        m_MethodName: DataMine
+        m_MethodName: Blockchain
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3053,7 +3053,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 242, y: -247}
+  m_AnchoredPosition: {x: 242, y: -195}
   m_SizeDelta: {x: 457.2, y: 27.5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1702201566
@@ -3525,7 +3525,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1035095022}
-        m_MethodName: DeployAd
+        m_MethodName: Automate
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3770,7 +3770,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1035095022}
-        m_MethodName: SellData
+        m_MethodName: MindUploading
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3977,7 +3977,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 241.99997, y: -196}
+  m_AnchoredPosition: {x: 241.99997, y: -247.00002}
   m_SizeDelta: {x: 457.2, y: 27.5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2092513442

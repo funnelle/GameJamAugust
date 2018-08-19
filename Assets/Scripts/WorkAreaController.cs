@@ -102,6 +102,7 @@ public class WorkAreaController : MonoBehaviour {
     }
 
     public void Blockchain() {
+        Debug.Log("Using blockchain");
         RevenueCount += Random.Range(-12000, 12000);
         SetCountText();
         StartCoroutine(DisableButton(BlockchainButton, 5f));
