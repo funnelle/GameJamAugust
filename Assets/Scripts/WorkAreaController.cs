@@ -14,11 +14,17 @@ public class WorkAreaController : MonoBehaviour {
     public Button MixedRealityButton;
     public Button MindUploadingButton;
 
+    public Button AcquisitionsButton;
+    public Button ResearchButton;
+
     public int DataSetsCount;
     public int RevenueCount;
     public int UsersCount;
     public int PentaPointsCount;
     public int WorkersCount;
+
+    private int MonetizationLoops;
+    private int WorkersEarned;
 
     public Text DataSetsText;
     public Text RevenueText;
@@ -34,6 +40,11 @@ public class WorkAreaController : MonoBehaviour {
         UsersCount = 0;
         PentaPointsCount = 0;
         WorkersCount = 0;
+        MonetizationLoops = 0;
+
+        AcquisitionsButton.interactable = false;
+        ResearchButton.interactable = false;
+
         SetCountText();
     }
 
@@ -45,12 +56,21 @@ public class WorkAreaController : MonoBehaviour {
         WorkersText.text = "Workers: " + WorkersCount.ToString();
     }
 
+    public void Update() {
+        if(MonetizationLoops>=3) {
+            AcquisitionsButton.interactable = true;
+        }
+        if(WorkersEarned>=100) {
+            ResearchButton.interactable = true;
+        }
+    }
+
     public void DataMine() {
         if (UsersCount >= 200) {
             DataSetsCount+=200;
             UsersCount-=200;
             SetCountText();
-            StartCoroutine(DisableButton(DataMineButton, 8f));
+            StartCoroutine(DisableButton(DataMineButton, 17f));
         }
     }
 
@@ -59,7 +79,7 @@ public class WorkAreaController : MonoBehaviour {
             RevenueCount -= 500;
             UsersCount += 500;
             SetCountText();
-            StartCoroutine(DisableButton(DeployAdButton, 5f));
+            StartCoroutine(DisableButton(DeployAdButton, 15f));
         }
     }
 
@@ -67,8 +87,9 @@ public class WorkAreaController : MonoBehaviour {
         if (DataSetsCount>=150) {
             DataSetsCount-=150;
             RevenueCount += 1500;
+            MonetizationLoops += 1;
             SetCountText();
-            StartCoroutine(DisableButton(MonetizeButton, 12f));
+            StartCoroutine(DisableButton(MonetizeButton, 20f));
         }
     }
 
@@ -77,7 +98,7 @@ public class WorkAreaController : MonoBehaviour {
             RevenueCount -= 1000;
             WorkersCount += 5;
             SetCountText();
-            StartCoroutine(DisableButton(GigWorkersButton, 5f));
+            StartCoroutine(DisableButton(GigWorkersButton, 25f));
         }
     }
 
@@ -87,7 +108,7 @@ public class WorkAreaController : MonoBehaviour {
             WorkersCount -= 10;
             RevenueCount += 2500;
             SetCountText();
-            StartCoroutine(DisableButton(AutomateButton, 5f));
+            StartCoroutine(DisableButton(AutomateButton, 25f));
         }
     }
 
@@ -97,7 +118,7 @@ public class WorkAreaController : MonoBehaviour {
             UsersCount += 1200;
             WorkersCount += 12;
             SetCountText();
-            StartCoroutine(DisableButton(AcquihireButton, 5f));
+            StartCoroutine(DisableButton(AcquihireButton, 30f));
         }
     }
 
@@ -105,7 +126,7 @@ public class WorkAreaController : MonoBehaviour {
         Debug.Log("Using blockchain");
         RevenueCount += Random.Range(-12000, 12000);
         SetCountText();
-        StartCoroutine(DisableButton(BlockchainButton, 5f));
+        StartCoroutine(DisableButton(BlockchainButton, 30f));
     }
 
     public void MixedReality() {
@@ -113,7 +134,7 @@ public class WorkAreaController : MonoBehaviour {
             RevenueCount -= 5000;
             UsersCount += 2500;
             SetCountText();
-            StartCoroutine(DisableButton(MixedRealityButton, 5f));
+            StartCoroutine(DisableButton(MixedRealityButton, 20f));
         }
     }
 
@@ -122,7 +143,7 @@ public class WorkAreaController : MonoBehaviour {
             UsersCount -= 3000;
             DataSetsCount += 3000;
             SetCountText();
-            StartCoroutine(DisableButton(MindUploadingButton, 5f));
+            StartCoroutine(DisableButton(MindUploadingButton, 30f));
         }
     }
 

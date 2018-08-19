@@ -128,7 +128,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &75933087
 RectTransform:
   m_ObjectHideFlags: 0
@@ -842,7 +842,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   timerImage: {fileID: 330557456}
   buttonName: {fileID: 1196948718}
-  totalTime: 8
+  totalTime: 30
 --- !u!114 &330557456
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -962,6 +962,7 @@ GameObject:
   - component: {fileID: 519420032}
   - component: {fileID: 519420031}
   - component: {fileID: 519420029}
+  - component: {fileID: 519420030}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -976,6 +977,101 @@ AudioListener:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   m_Enabled: 1
+--- !u!82 &519420030
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 519420028}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 2a58d2d2fc3654c4599f166d022e5ac5, type: 3}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!20 &519420031
 Camera:
   m_ObjectHideFlags: 0
@@ -1334,7 +1430,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 99, y: -0.2}
+  m_AnchoredPosition: {x: 96.7, y: -0.2}
   m_SizeDelta: {x: 46.79, y: 37.25}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &691424303
@@ -1350,7 +1446,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   timerImage: {fileID: 691424304}
   buttonName: {fileID: 2034609843}
-  totalTime: 12
+  totalTime: 30
 --- !u!114 &691424304
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1729,6 +1825,8 @@ MonoBehaviour:
   BlockchainButton: {fileID: 1196948718}
   MixedRealityButton: {fileID: 142576141}
   MindUploadingButton: {fileID: 2034609843}
+  AcquisitionsButton: {fileID: 642613120}
+  ResearchButton: {fileID: 1041276989}
   DataSetsCount: 0
   RevenueCount: 0
   UsersCount: 0
@@ -2019,7 +2117,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   timerImage: {fileID: 1080456589}
   buttonName: {fileID: 2051843247}
-  totalTime: 12
+  totalTime: 20
 --- !u!1 &1089298652
 GameObject:
   m_ObjectHideFlags: 0
@@ -2267,7 +2365,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   timerImage: {fileID: 1190823929}
   buttonName: {fileID: 253596285}
-  totalTime: 8
+  totalTime: 25
 --- !u!114 &1190823929
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2568,7 +2666,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1315732805
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2654,7 +2752,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   timerImage: {fileID: 1365174890}
   buttonName: {fileID: 1963242752}
-  totalTime: 5
+  totalTime: 25
 --- !u!114 &1365174890
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2772,7 +2870,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   timerImage: {fileID: 1401726118}
   buttonName: {fileID: 85754716}
-  totalTime: 5
+  totalTime: 15
 --- !u!1 &1489103499
 GameObject:
   m_ObjectHideFlags: 0
@@ -3176,7 +3274,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   timerImage: {fileID: 1783308491}
   buttonName: {fileID: 1148304355}
-  totalTime: 12
+  totalTime: 30
 --- !u!114 &1783308491
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3260,7 +3358,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   timerImage: {fileID: 1796359003}
   buttonName: {fileID: 142576141}
-  totalTime: 5
+  totalTime: 20
 --- !u!114 &1796359003
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3378,7 +3476,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   timerImage: {fileID: 1814741253}
   buttonName: {fileID: 1314403874}
-  totalTime: 8
+  totalTime: 17
 --- !u!1 &1901538125
 GameObject:
   m_ObjectHideFlags: 0
@@ -3727,8 +3825,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 370.79947, y: 37.000656}
-  m_SizeDelta: {x: 152.9, y: 44.2}
+  m_AnchoredPosition: {x: 372.67, y: 39.41}
+  m_SizeDelta: {x: 169.6, y: 49.03}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2034609843
 MonoBehaviour:
@@ -3801,7 +3899,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300026, guid: 3af46ab81b40f48ceace3debc64077ed, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 366d34cd15afb46d6bae9087b392cb37, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
