@@ -1013,7 +1013,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Users:'
+  m_Text: 0
 --- !u!222 &517046144
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1960,7 +1960,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Data Sets:'
+  m_Text: 0
 --- !u!222 &1038680566
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2983,7 +2983,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Revenue:'
+  m_Text: 0
 --- !u!222 &1489103502
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -3227,7 +3227,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Workers:'
+  m_Text: 0
 --- !u!222 &1702201567
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -4283,7 +4283,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Penta-Points:'
+  m_Text: 0
 --- !u!222 &2092513443
 CanvasRenderer:
   m_ObjectHideFlags: 0
