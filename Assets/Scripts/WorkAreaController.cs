@@ -34,8 +34,6 @@ public class WorkAreaController : MonoBehaviour {
 
     public Image HappyFunTimes;
 
-    public GameObject happy;
-
     private float time;
 
     private void Start() {
@@ -47,7 +45,7 @@ public class WorkAreaController : MonoBehaviour {
         MonetizationLoops = 0;
 
         AcquisitionsButton.interactable = false;
-        ResearchButton.interactable = false;
+        //ResearchButton.interactable = false;
 
         SetCountText();
     }
@@ -64,9 +62,11 @@ public class WorkAreaController : MonoBehaviour {
         if(MonetizationLoops>=3) {
             AcquisitionsButton.interactable = true;
         }
+        /*
         if(WorkersEarned>=100) {
             ResearchButton.interactable = true;
         }
+        */
     }
 
     public void DataMine() {
