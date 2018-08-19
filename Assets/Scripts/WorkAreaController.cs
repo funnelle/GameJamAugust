@@ -32,6 +32,10 @@ public class WorkAreaController : MonoBehaviour {
     public Text PentaPointsText;
     public Text WorkersText;
 
+    public Image HappyFunTimes;
+
+    public GameObject happy;
+
     private float time;
 
     private void Start() {
@@ -126,7 +130,10 @@ public class WorkAreaController : MonoBehaviour {
 
     public void Blockchain() {
         Debug.Log("Using blockchain");
-        RevenueCount += Random.Range(-12000, 12000);
+        //RevenueCount += Random.Range(-12000, 12000);
+        HappyFunTimes.enabled = true;
+        HappyFunTimes.rectTransform.SetAsLastSibling();
+        StartCoroutine(HappyFunHelper());
         SetCountText();
         StartCoroutine(DisableButton(BlockchainButton, 30f));
     }
@@ -155,6 +162,11 @@ public class WorkAreaController : MonoBehaviour {
         buttonName.interactable = false;
         yield return new WaitForSeconds(disableButtonTime);
         buttonName.interactable = true;
+    }
+
+    private IEnumerator HappyFunHelper() {
+        yield return new WaitForSeconds(9);
+        HappyFunTimes.enabled = false;
     }
 
 }
