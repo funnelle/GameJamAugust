@@ -98,12 +98,6 @@ public class Avatar : MonoBehaviour {
             GameObject responseTwoButton = bubble.transform.Find("DisagreeButton").gameObject;
             responseTwoButton.SetActive(true);
 
-            unotify();
-            collapse();
-
-            values.SetCountText();
-
-
             Button responseOneButtonB = responseOneButton.GetComponent<Button>();
             Button responseTwoButtonB = responseTwoButton.GetComponent<Button>();
 
@@ -115,6 +109,7 @@ public class Avatar : MonoBehaviour {
 
             responseOneButtonB.onClick.AddListener(delegate { resolve(valuesWhenAggree, id); });
             responseTwoButtonB.onClick.AddListener(delegate { resolve(valuesWhenDisAggree, id); });
+
         }
     }
     public void setName(string name)

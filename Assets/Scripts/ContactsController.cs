@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class ContactsController : MonoBehaviour {
 
@@ -11,13 +12,15 @@ public class ContactsController : MonoBehaviour {
     public GameObject workController;
     private WorkAreaController values;
     private float eventNounce = 0;
-    
+    public Image endSlate;
+
     void Start () {
+        endSlate.enabled = false;
 
         startTime = Time.time;
-        int top = 20;
+        int top = 0;
         int right = 0;
-        int interval = -90;
+        int interval = -135;
         this.newAvatar(new Vector3(right, top + interval, 0), "Cliff Pittman");
         this.newAvatar(new Vector3(right, top + interval * 2, 0), "Diana Brown");
         this.newAvatar(new Vector3(right, top + interval * 3, 0), "Benton Solomon (CEO/Thought Leader)");
@@ -43,7 +46,7 @@ public class ContactsController : MonoBehaviour {
         RectTransform bossTranform = newAvatar.GetComponent<RectTransform>();
         bossTranform.position = new Vector3(this.transform.position.x, this.transform.position.y, 0);
         bossTranform.position += possition;
-        bossTranform.localScale += new Vector3(-0.1F, -0.1F, 0);
+        bossTranform.localScale += new Vector3(0.2F, 0.2F, 0);
 
         newAvatar.GetComponent<Avatar>().setName(name);
     }
@@ -58,6 +61,11 @@ public class ContactsController : MonoBehaviour {
         int penta = values.PentaPointsCount;
         int workers = values.WorkersCount;
    
+        if (Time.time > 900)
+        {
+            endSlate.enabled = true;
+            
+        }
         foreach (Avatar child in scripts)
         {
             switch(child.getName())
@@ -239,24 +247,22 @@ public class ContactsController : MonoBehaviour {
 
     private void handleCliff(Avatar contact)
     {
-        if (values.DataSetsCount == 200 )
+        if (values.DataSetsCount > 150 )
         {
             contact.notify("Growth Hacker isn’t the most glamorous position, but you start bringing in revenue and I’ll see what I can do.", 1);
         }
-        else if (values.RevenueCount > 3000)
+        if (values.RevenueCount > 600)
+        {
+            contact.notify("What do you think about using more memes in our ads? The kids like those, right? And we can get our name out faster with less work.", 2);
+            contact.respond("Sounds Good!", "Let's not", new int[] { 0, 0, 20, 25, 0 }, new int[] { 0, 0, 0, -5, 0 }, 3);
+        }
+
+        if (values.RevenueCount > 3000)
         {
             contact.notify("Good job, kid. You’re moving up.", 4);
         }
-        else if (values.RevenueCount > 500)
-        {
-            contact.notify("What do you think about using more memes in our ads? The kids like those, right? And we can get our name out faster with less work.", 2);
-            contact.respond("Sounds Good!", "Let's not", new int[] {0,0,20,25,0}, new int[] { 0, 0, 0, -5, 0 }, 3);
-        }
 
 
-
-
-        
     }
 }
 
